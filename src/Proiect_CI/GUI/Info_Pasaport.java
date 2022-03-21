@@ -5,7 +5,11 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
 import javax.swing.JTextField;
-
+/**
+ * 
+ * @author Stefan si Ionut
+ *
+ */
 public class Info_Pasaport extends Panel{
 	
 	/**
@@ -15,20 +19,39 @@ public class Info_Pasaport extends Panel{
 	// Am creat campurile ce vor fi completate, in cadrul Pasaportului
 	// Am folosit protected pentru a avea acces in Info_Destinatie, 
 	// pentru a crea mesajul corespunzator tipului de CI
+	/**
+	 * Var pentru nume
+	 */
 	protected JTextField txtNume;
+	/**
+	 * Var pentru Prenume
+	 */
 	protected JTextField txtPrenume;
+	/**
+	 * Var pentru ID
+	 */
 	protected JTextField txtId;
+	/**
+	 * Var pentru Numar
+	 */
 	protected JTextField txtNumar;
+	/**
+	 * Var pentru Dara
+	 */
 	protected JTextField txtData;
+	/**
+	 * Var pentru Natiune
+	 */
 	protected JTextField txtNatiune;
 	
+	/**
+	* Initializarea campurilor si pozitionarea lor
+	*/
 	Info_Pasaport(){
 
 		setLayout(null);
 	
-		/**
-		 * Initializarea campurilor si pozitionarea lor
-		 */
+		
 		
 		txtNume = new JTextField();
 		txtNume.setBounds(123, 0, 167, 30);
@@ -74,7 +97,10 @@ public class Info_Pasaport extends Panel{
 		
 	}
 	
-	// Functie ce sterge textul initial din camp la efectuarea unui click de catre utilizator 
+	/**
+	 * Functie ce sterge textul initial din camp la efectuarea unui click de catre utilizator
+	 * @param aux Aici se afla textul din casuta
+	 */
 	void Focus(JTextField aux) {
 		String temp = aux.getText();
 		aux.addFocusListener(new FocusListener() {
@@ -91,8 +117,10 @@ public class Info_Pasaport extends Panel{
 				}		
 			}
 			
-			// Cand se apasa click-ul se seteaza campul ca fiind gol
 			@Override
+			/**
+			 * Cand se apasa click-ul se seteaza campul ca fiind gol
+			 */
 			public void focusGained(FocusEvent e) {
 				aux.setText("");
 				

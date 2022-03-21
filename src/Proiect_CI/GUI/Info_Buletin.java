@@ -5,33 +5,53 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
 import javax.swing.JTextField;
-
+/**
+ * 
+ * @author Stefan si Ionut
+ *
+ */
 public class Info_Buletin  extends Panel{
 	
+	/**
+	 * Panelul de Buletin<br>
+	 * Am creat campurile ce vor fi completate, in cadrul Buletinului<br>
+	 * Am folosit protected pentru a avea acces in Info_Destinatie,<br>
+	 * pentru a crea mesajul corespunzator tipului de CI
+	 */
 	
 	/**
-	 * Panelul de Buletin
+	 * Var pentru nume
 	 */
-
-	
-	// Am creat campurile ce vor fi completate, in cadrul Buletinului
-	// Am folosit protected pentru a avea acces in Info_Destinatie, 
-	// pentru a crea mesajul corespunzator tipului de CI
 	protected JTextField txtNume;
+	/**
+	 * Var pentru prenume
+	 */
 	protected JTextField txtPrenume;
+	/**
+	 * Var pentru CNP
+	 */
 	protected JTextField txtCNP;
+	/**
+	 * Var pentru Numar
+	 */
 	protected JTextField txtNumar;
+	/**
+	 * Var pentru Serie
+	 */
 	protected JTextField txtSerie;
+	/**
+	 * Var pentru Adresa
+	 */
 	protected JTextField txtAdresa;
 	
+	/**
+	 * Constructor<br>
+	 * Initializarea campurilor si pozitionarea lor
+	 */
 	Info_Buletin(){
 
 		setLayout(null);
 	
-		/**
-		 * Initializarea campurilor si pozitionarea lor
-		 */
-		
 		txtNume = new JTextField();
 		txtNume.setBounds(123, 0, 167, 30);
 		txtNume.setText("Nume");
@@ -76,7 +96,12 @@ public class Info_Buletin  extends Panel{
 		Focus(txtAdresa);
 	}
 	
-	// Functie ce sterge textul initial din camp la efectuarea unui click de catre utilizator 
+
+	/**
+	 * 
+	 * @param aux Aici se afla textul din casute
+	 * Functie ce sterge textul initial din camp la efectuarea unui click de catre utilizator 
+	 */
 	void Focus(JTextField aux) {
 		String temp = aux.getText();
 		aux.addFocusListener(new FocusListener() {
@@ -93,8 +118,11 @@ public class Info_Buletin  extends Panel{
 				}		
 			}
 			
-			// Cand se apasa click-ul se seteaza campul ca fiind gol
+			
 			@Override
+			/**
+			 * Cand se apasa click-ul se seteaza campul ca fiind gol
+			 */
 			public void focusGained(FocusEvent e) {
 				aux.setText("");
 				

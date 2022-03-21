@@ -8,15 +8,23 @@ package Proiect_CI;
 
 public class Viza extends Tip_CI{
 		
-	// constructorul ce implementeaza constructorul delcarat in clasa parinte
+	/**
+	 * 
+	 * @param destinatie Parametru ce va indica destinatia
+	 * @param tip Parametru ce va indica tipul Cartii de Identitate<br>
+	 * Constructorul ce implementeaza constructorul delcarat in clasa parinte
+	 * 
+	 */
 	public Viza(Tip_destinatie destinatie, String tip){
 		super(destinatie, tip);
 	}
 
-	// adaptarea metodei abstracte in functie de nevoile clasei
+	/**
+	 * Adaptarea metodei abstracte in functie de nevoile clasei<br>
+	 * Returneaza o referinta a functiei Destinatie din implementor, prin intermediul variabilei destinatie declarata in clasa parinte
+	 */
 	@Override
 	public String Validare() {
-		// returneaza o referinta a functiei Destinatie din implementor, prin intermediul variabilei destinatie declarata in clasa parinte
 		return destinatie.Destinatie(tip);
 	}
 

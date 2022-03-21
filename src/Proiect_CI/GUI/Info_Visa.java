@@ -5,7 +5,11 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
 import javax.swing.JTextField;
-
+/**
+ * 
+ * @author Stefan si Ionut
+ *
+ */
 public class Info_Visa extends Panel{
 	
 	/**
@@ -16,19 +20,35 @@ public class Info_Visa extends Panel{
 	// Am creat campurile ce vor fi completate, in cadrul Vizei
 	// Am folosit protected pentru a avea acces in Info_Destinatie, 
 	// pentru a crea mesajul corespunzator tipului de CI
+	
+	/**
+	 * Var pentru Nume
+	 */
 	protected JTextField txtNume;
+	/**
+	 * Var pentru Prenume
+	 */
 	protected JTextField txtPrenume;
+	/**
+	 * Var pentru Id
+	 */
 	protected JTextField txtId;
+	/**
+	 * Var pentru Numar
+	 */
 	protected JTextField txtNumar;
+	/**
+	 * Var pentru Tara
+	 */
 	protected JTextField txtTara;
 	
+	/**
+	 * Initializarea campurilor si pozitionarea lor
+	 */
 	Info_Visa(){
 
 		setLayout(null);
 	
-		/**
-		 * Initializarea campurilor si pozitionarea lor
-		 */
 		
 		txtNume = new JTextField();
 		txtNume.setBounds(123, 0, 167, 30);
@@ -67,13 +87,18 @@ public class Info_Visa extends Panel{
 		
 	}
 	
-	// Functie ce sterge textul initial din camp la efectuarea unui click de catre utilizator 
+	/**
+	 * Functie ce sterge textul initial din camp la efectuarea unui click de catre utilizator <br>
+	 * @param aux Se afla textul din Casuta
+	 */
 	void Focus(JTextField aux) {
 		String temp = aux.getText();
 		aux.addFocusListener(new FocusListener() {
 			
-			// Daca campul ramane gol, se va afisa in el textul initial
 			@Override
+			/**
+			 * Daca campul ramane gol, se va afisa in el textul initial
+			 */
 			public void focusLost(FocusEvent e) {
 							
 				if(aux.getText().equals("")) {
@@ -84,8 +109,10 @@ public class Info_Visa extends Panel{
 				}		
 			}
 			
-			// Cand se apasa click-ul se seteaza campul ca fiind gol
 			@Override
+			/**
+			 * Cand se apasa click-ul se seteaza campul ca fiind gol
+			 */
 			public void focusGained(FocusEvent e) {
 				aux.setText("");
 				

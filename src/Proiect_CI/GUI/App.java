@@ -24,30 +24,41 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * 
+ * @author Stefan Stoleriu, Ionut Sopon
+ *
+ */
 public class App {
-	
 	/**
-	 * Aplicatia, de aici se da run
+	 * Variabila de tip String pentru a afla tipul de CI din ComboBox
 	 */
-	
-	
-	// Variabila de tip String pentru a afla tipul de CI din ComboBox
 	protected static String CI = null;
-	// Fereastra aplicatiei
+	/**
+	 * Fereastra aplicatiei
+	 */
 	private JFrame frame;
-	// Un panel ce se afla in partea de sus a ferestrei
+	/**
+	 * Un panel ce se afla in partea de sus a ferestrei
+	 */
 	private Panel SUS;
-	// Un panel ce se afla in partea de jos a ferestrei
+	/**
+	 * Un panel ce se afla in partea de jos a ferestrei
+	 */
 	private Panel JOS;
-	// Un masiv de date, de tip String pentru a stoca variantele ce pot fi alese
-	String Tip_CI[] = {"Buletin", "Viza", "Pasaport"};		
-	// Un comboBox, ce ne da posibilitatea de a alege tipul de CI, variantele fiind stocate in Tip_CI
+	/**
+	 * Un masiv de date, de tip String pentru a stoca variantele ce pot fi alese
+	 */
+	String Tip_CI[] = {"Buletin", "Viza", "Pasaport"};	
+	/**
+	 * Un comboBox, ce ne da posibilitatea de a alege tipul de CI, variantele fiind stocate in Tip_CI
+	 */
 	JComboBox<String> comboBox1 = new JComboBox<String>(Tip_CI);
 
 	/**
 	 * Se lanseaza Aplicatia
+	 * @param args variabila unde sunt argumentele
 	 */
-	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -65,9 +76,8 @@ public class App {
 	 * Se creaza Aplicatia
 	 */
 	public App() {
-		initialize(); //initializarea ei
+		initialize();
 	}
-
 	/**
 	 * Se initializeaza componentele, si sunt adaugate in fereastra
 	 */

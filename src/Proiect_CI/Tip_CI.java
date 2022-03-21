@@ -3,22 +3,33 @@ package Proiect_CI;
 /**
  * BRIDGE DESIGN PATTERN
  * - ABSTRACTIZATION CLASS 
- * 		=> Tip_CI
- *      * functioneaza ca un template pentru viitoare implementari ale aceluiasi concept, avand functionalitati similare 
+ * 		=> Tip_CI <br>
+ *       functioneaza ca un template pentru viitoare implementari ale aceluiasi concept, avand functionalitati similare 
  */
 
 public abstract class Tip_CI {
-
-	// referinta la implementor
+	
+	/**
+	 * Parametru ce va indica destinatia
+	 */
 	protected Tip_destinatie destinatie;
-	// variabila de tip String pentru a determina tipul de document
+	/**
+	 * Parametru ce va indica tipul Cartii de Identitate
+	 */
 	public String tip;
 
-	// Constructor
+	/**
+	 * Constructor<br>
+	 *  @param 	destinatie	Parametru ce va indica destinatia
+	 *  @param 	tip	Parametru ce va indica tipul Cartii de Identitate
+	 */
 	public Tip_CI(Tip_destinatie destinatie, String tip) {
 		this.destinatie = destinatie;
 		this.tip = tip;
 	}
-	// metoda abstracta ce urmeaza a fi suprascrisa in fiecare clasa copil a abstractizarii
+	/**
+	 * Metoda abstracta ce urmeaza a fi suprascrisa in fiecare clasa copil a abstractizarii<br>
+	 * @return Returneaza un mesaj specific
+	 */
 	abstract public String Validare();
 }

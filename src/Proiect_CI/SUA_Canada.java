@@ -8,7 +8,9 @@ package Proiect_CI;
 
 public class SUA_Canada implements Tip_destinatie {
 
-	// returneaza un String in functie de argumentul oferit
+	/**
+	 * Returneaza un String in functie de argumentul oferit
+	 */
 	@Override
 	public String Destinatie(String tip) {
 		if (tip == "Viza") {

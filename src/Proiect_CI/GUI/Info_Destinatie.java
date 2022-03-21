@@ -15,31 +15,39 @@ import Proiect_CI.SUA_Canada;
 import Proiect_CI.Tip_CI;
 import Proiect_CI.UE;
 import Proiect_CI.Viza;
-
+/**
+ * Panelul de verificare si afisarea textului corespunzator
+ */
 public class Info_Destinatie extends Panel{
 	
+	
+		
 	/**
-	 * Panelul de verificare si afisarea textului corespunzator
+	 * Un masiv de date, de tip String pentru a stoca variantele ce pot fi alese
 	 */
-	
-	
-	// Un masiv de date, de tip String pentru a stoca variantele ce pot fi alese
-	private String Locatie[] = {"SUA sau Canada", "UE", "Oriunde"};		
-	// Un comboBox, ce ne da posibilitatea de a alege tipul de destinatie, variantele fiind stocate in Locatie
+	private String Locatie[] = {"SUA sau Canada", "UE", "Oriunde"};
+	/**
+	 * Un comboBox, ce ne da posibilitatea de a alege tipul de destinatie, variantele fiind stocate in Locatie
+	 */
 	private JComboBox<String> comboBox = new JComboBox<String>(Locatie);
-	//Butonul de verificare
+	/**
+	 * Butonul de verificare
+	 */
 	private JButton Verificare;
-	// Componenta ce va afisa textul
+	/**
+	 * Componenta ce va afisa textul
+	 */
 	protected JTextArea Mesaj;
-	// Variabila ce va stoca textul
+	/**
+	 * Variabila ce va stoca textul
+	 */
 	private String msj;
 	
+	/**
+	 * Initializarea campurilor si pozitionarea lor<br>
+	 */
 	public Info_Destinatie() {
 		setLayout(null);
-		
-		/**
-		 * Initializarea campurilor si pozitionarea lor
-		 */
 		
 		comboBox.setBounds(123, 0, 167, 30);
 		add(comboBox);
@@ -56,10 +64,13 @@ public class Info_Destinatie extends Panel{
 		add(Verificare);
 	}
 	
-	// Functie ce va initializa variabile Carte_Identitate, in functie de CI ales
+	/**
+	 * Functie ce va initializa variabile Carte_Identitate, in functie de CI ales<br>
+	 * @param CI Tipul de carte de identitate
+	 */
 	void SetInfo_Destinatie(String CI){
 	
-		
+
 		Verificare.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
@@ -167,12 +178,12 @@ public class Info_Destinatie extends Panel{
 		
 	}
 	
+	
 	/**
-	 * Functii ce au fost folosite pentru a seta mesajul in functie de,
-	 * Tipul de Carte de Identitate, fiecare avand campuri diferite de completat
+	 * Functie ce au fost folosite pentru a seta mesajul in functie de,<br>
+	 * Tipul de Carte de Identitate, fiecare avand campuri diferite de completa
+	 * @param bul Trimitere a obiectului de tip buletin
 	 */
-	
-	
 	void SetMesajBuletin(Info_Buletin bul) {
 		
 		this.msj = "Persoana: " + bul.txtNume.getText() + " " + bul.txtPrenume.getText()+"\n";
@@ -182,6 +193,11 @@ public class Info_Destinatie extends Panel{
 			
 	}
 	
+	/**
+	 * Functie ce au fost folosite pentru a seta mesajul in functie de,<br>
+	 * Tipul de Carte de Identitate, fiecare avand campuri diferite de completa
+	 * @param viza Trimitere a obiectului de tip Viza
+	 */
 	void SetMesajViza(Info_Visa viza) {
 		this.msj = "Persoana: " + viza.txtNume.getText() + " " + viza.txtPrenume.getText()+"\n";
 		this.msj += "ID: " + viza.txtId.getText() + "\n";
@@ -190,6 +206,11 @@ public class Info_Destinatie extends Panel{
 		
 	}
 	
+	/**
+	 * Functie ce au fost folosite pentru a seta mesajul in functie de,<br>
+	 * Tipul de Carte de Identitate, fiecare avand campuri diferite de completa
+	 * @param pas Trimitere a obiectului de tip Pasaport
+	 */
 	void SetMesajPasaport(Info_Pasaport pas) {
 		this.msj = "Persoana: " + pas.txtNume.getText() + " " + pas.txtPrenume.getText()+"\n";
 		this.msj += "ID: " + pas.txtId.getText() + "\n";

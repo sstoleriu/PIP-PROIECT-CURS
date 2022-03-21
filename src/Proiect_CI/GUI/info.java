@@ -8,15 +8,18 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Panel ce contine poza ca rol de plash Screen
+ */
 public class info extends JLabel{
 	
 	/**
-	 * Panel ce contine poza ca rol de plash Screen
+	 * Aici se afla imaginea de fundal
 	 */
-	
-	
 	private BufferedImage img;
-	
+	/**
+	 * Constructor se initializeaza campurile
+	 */
 	info(){
 		setBounds(0, 0, 428, 590);
 		setLayout(null);
