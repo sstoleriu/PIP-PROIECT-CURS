@@ -30,7 +30,7 @@ public class Info_Buletin  extends Panel{
 	/**
 	 * Var pentru CNP
 	 */
-	protected JTextField txtCNP;
+	protected static JTextField txtCNP;
 	/**
 	 * Var pentru Numar
 	 */
@@ -43,6 +43,13 @@ public class Info_Buletin  extends Panel{
 	 * Var pentru Adresa
 	 */
 	protected JTextField txtAdresa;
+	
+	public static String getCNP() {
+		
+		//return txtCNP.getText();
+		return "12hjg34";
+	}
+	
 	
 	/**
 	 * Constructor<br>
@@ -129,5 +136,4 @@ public class Info_Buletin  extends Panel{
 			}
 		});
 	}
-
 }

@@ -17,6 +17,15 @@ public abstract class Tip_CI {
 	 * Parametru ce va indica tipul Cartii de Identitate
 	 */
 	public String tip;
+	
+	public static String getCI() {
+		switch ("Buletin"){
+		case "Buletin": return "Buletin";
+		case "Viza":	return "Viza";
+		case "Pasaport": return "Pasaport";
+		default: return null;
+		}	
+	}
 
 	/**
 	 * Constructor<br>
